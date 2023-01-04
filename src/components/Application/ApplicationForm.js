@@ -1,6 +1,8 @@
-function ApplicationForm() {
+function ApplicationForm(update) {
+  const { updateFunction } = update;
+
   return (
-    <div>&ensp;ApplicationForm</div>
+    <div>ApplicationForm</div>
   );
 }
 

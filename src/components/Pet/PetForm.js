@@ -1,4 +1,6 @@
-function PetForm() {
+function PetForm(update) {
+  const { updateFunction } = update;
+
   return (
     <div>PetForm</div>
   );

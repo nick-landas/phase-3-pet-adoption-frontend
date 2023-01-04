@@ -1,4 +1,6 @@
-function PetEditButton() {
+function PetEditButton(update) {
+  const { updateFunction } = update;
+
   return (
     <div>PetEditButton</div>
   );

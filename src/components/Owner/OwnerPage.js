@@ -1,11 +1,18 @@
 import { OwnerEditForm, OwnerList } from "../../modules";
-
+import { useState } from "react";
 function OwnerPage() {
+  const [OwnerFormData, updateData] = useState({
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    homeAddress: "",
+  });
+
   return (
     <>
       <div>Owner Page</div>
-      <OwnerEditForm></OwnerEditForm>
-      <OwnerList></OwnerList>
+      <OwnerEditForm updateFunction={updateData}></OwnerEditForm>
+      <OwnerList formData={OwnerFormData}></OwnerList>
     </>
   );
 }
