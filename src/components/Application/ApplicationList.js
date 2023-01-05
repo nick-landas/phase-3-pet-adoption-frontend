@@ -1,17 +1,16 @@
-import { ApplicationCard } from '../../modules';
+import { ApplicationCard } from "../../modules";
 import { useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-function ApplicationList({ formData, appInfo, updateAppInfo}) {
-
+function ApplicationList({ formData, appInfo, updateAppInfo }) {
   const api = "http://localhost:9292/adoption-applications";
   useEffect(() => {
     fetch(api)
-    .then((res) => res.json())
-    .then((data) => {
-      updateAppInfo(data);
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        updateAppInfo(data);
+      });
   }, []);
   useEffect(() => {
     console.log(appInfo);
@@ -20,7 +19,16 @@ function ApplicationList({ formData, appInfo, updateAppInfo}) {
   const makeCards = (appInfo) => {
     return appInfo.map((app) => {
       return (
-        <Col key={app.date + app.accepted + app.pet_id + app.owner_id}>
+        <Col
+          key={
+            app.date +
+            app.accepted +
+            app.pet_name +
+            app.owner_name +
+            app.home_address +
+            app.phone_number
+          }
+        >
           <ApplicationCard appInfo={app}></ApplicationCard>
         </Col>
       );
@@ -28,7 +36,6 @@ function ApplicationList({ formData, appInfo, updateAppInfo}) {
   };
   return (
     <>
-      <div>Application List</div>
       <Row xs={1} md={3} lg={5} className="g-4">
         {makeCards(appInfo)}
       </Row>

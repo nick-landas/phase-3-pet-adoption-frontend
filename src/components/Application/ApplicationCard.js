@@ -28,7 +28,6 @@ function ApplicationCard({ appInfo }) {
 
   return (
     <>
-      <div>ApplicationCard</div>
       <div>
         <Card border="dark" style={{ width: "18rem" }}>
           <Card.Title className="card text-center">{appInfo.date}</Card.Title>
@@ -38,10 +37,16 @@ function ApplicationCard({ appInfo }) {
               Adoption_Approved: {appInfo.accepted ? "Accepted" : "Pending"}
             </ListGroup.Item>
             <ListGroup.Item variant="dark">
-              Pet ID: {appInfo.pet_id}
+              Pet: {appInfo.pet_name}
             </ListGroup.Item>
             <ListGroup.Item variant="light">
-              (Prospective)Owner ID: {appInfo.owner_id}
+              Applicant: {appInfo.owner_name}
+            </ListGroup.Item>
+            <ListGroup.Item variant="dark">
+              Applicant Address: {appInfo.home_address}
+            </ListGroup.Item>
+            <ListGroup.Item variant="light">
+              Applicant Phone #: {appInfo.phone_number}
             </ListGroup.Item>
           </ListGroup>
           <Card.Body className="card text-center">
