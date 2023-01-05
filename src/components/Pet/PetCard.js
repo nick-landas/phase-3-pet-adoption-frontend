@@ -7,6 +7,7 @@ function PetCard({ petInfo }) {
   const [pet, updatePet] = useState({
     name: petInfo.name,
     species: petInfo.species,
+    weight: petInfo.weight,
     house_broken: petInfo.house_broken,
     id: petInfo.id,
     personality: petInfo.personality,
@@ -15,7 +16,7 @@ function PetCard({ petInfo }) {
   return (
     <>
       <div>
-        <Card border="dark" style={{ width: "12rem" }}>
+        <Card border="dark" style={{ width: "18rem" }}>
           <Card.Title className="card text-center">{pet.name}</Card.Title>
           <Card.Img variant="top" src="./lizzy.jpg" />
           <ListGroup className="list-group-flush">
