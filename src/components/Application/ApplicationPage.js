@@ -9,6 +9,7 @@ function ApplicationPage() {
     homeAddress: "",
     petName: "",
   });
+  const [applicationList, updateList] = useState([]);
 
   useEffect(() => {
     console.log(applicationFormData)
@@ -26,7 +27,7 @@ function ApplicationPage() {
       </div>
 
       <ApplicationForm formData={applicationFormData} updateFunction={updateData}></ApplicationForm>
-      <ApplicationList formData={applicationFormData}></ApplicationList>
+      <ApplicationList formData={applicationFormData} appInfo={applicationList} updateAppInfo={updateList}></ApplicationList>
     </>
   );
 }
