@@ -10,7 +10,15 @@ function OwnerPage() {
 
   return (
     <>
-      <div>Owner Page</div>
+      <div>
+        <section id="owners">
+          <div className="third-img"></div>
+          <div className="title">
+            <h2>Owners</h2>
+          </div>
+        </section>
+      </div>
+      
       <OwnerEditForm updateFunction={updateData}></OwnerEditForm>
       <OwnerList formData={OwnerFormData}></OwnerList>
     </>

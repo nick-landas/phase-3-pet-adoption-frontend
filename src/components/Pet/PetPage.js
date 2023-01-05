@@ -13,7 +13,15 @@ function PetPage() {
 
   return (
     <>
-      <div>Pet Page</div>
+      <div>
+        <section id="pets">
+          <div className="second-img"></div>
+          <div className="title">
+            <h2>Pets</h2>
+          </div>
+        </section>
+
+      </div>
       <PetForm updateFunction={updateData}></PetForm>
       <PetList formData={petFormData}></PetList>
     </>

@@ -12,7 +12,15 @@ function ApplicationPage() {
 
   return (
     <>
-      <div>Application Page</div>
+      <div>
+        <section id="application">
+          <div className="fourth-img"></div>
+            <div className="title">
+              <h2>Application</h2>
+            </div>
+        </section>
+      </div>
+
       <ApplicationForm updateFunction={updateData}></ApplicationForm>
       <ApplicationList formData={applicationFormData}></ApplicationList>
     </>

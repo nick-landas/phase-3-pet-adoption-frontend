@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  ::-webkit-scrollbar {
+      display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  #home, #pets, #owners, #application, #contact {
+    height: 100vh;
+    width: 100%;
+    position: relative;
   }
-}
+
+  #home .back-img {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');
+    /* background-color: red; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+  }
+
+  #home .nav-bar {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+      margin: 0 auto;
+  }
+  .nav-bar ul {
+    padding: 20px;
+    text-align: center;
+  }
+  .nav-bar ul li {
+    display: inline-block;
+    padding: 0 18px;
+    font-family: helvetica;
+    font-size: 1.6rem;
+
+  }
+  .nav-bar ul li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(255, 119, 0);
+  }
+  .nav-bar ul li:hover a {
+    color: white;
+  }
+
+  #pets .second-img {
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/lenstravelier-PNXnfta-6-4-unsplash.jpg');
+    /* background-color: red; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+  }
+  #owners .third-img {
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/jean-beller-yhUqpjd1F9I-unsplash.jpg');
+    /* background-color: red; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+  }
+  #application .fourth-img {
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/zdenek-machacek-k8z65TBa9dY-unsplash.jpg');
+    /* background-color: red; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+  }
+  #contact .fifth-img {
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/jason-hawke-m2vM53nx0uA-unsplash.jpg');
+    /* background-color: red; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+  }
+  #home .title, #pets .title, #owners .title, #application .title, #contact .title {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h2 {color: white;
+    font-family: helvetica;
+    font-weight: 700;
+    font-size: 70px;
+    letter-spacing: 2px;
+    }
+  
+  .back-img, .second-img, .third-img, .fourth-img, .fifth-img {
+    background-attachment: fixed;
+  }
+
+  .sticky-top {position: sticky;
+  }
+
+  .bg-gradient {background-image: var(--bs-gradient);
+  }

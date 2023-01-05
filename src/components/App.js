@@ -1,18 +1,20 @@
-import logo from '../logo.svg';
+import {useState, useEffect} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import { ApplicationPage, Header, Footer, HomePage, NavBar, OwnerPage, PetPage } from '../modules';
+import { ApplicationPage, Header, Footer, HomePage, Contact, NavBar, OwnerPage, PetPage } from '../modules';
 
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
+    <>
+      {/* <Header></Header> */}
       <NavBar></NavBar>
       <HomePage></HomePage>
-      <ApplicationPage></ApplicationPage>
       <PetPage></PetPage>
       <OwnerPage></OwnerPage>
+      <ApplicationPage></ApplicationPage>
+      <Contact></Contact>
       <Footer></Footer>
-    </div>
+  </>
   );
 }
 
