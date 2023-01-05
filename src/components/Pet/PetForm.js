@@ -7,13 +7,13 @@ function PetForm(props) {
   const handleChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;
-    updateFunction({...formData, [name]: value})
+    updateFunction({ ...formData, [name]: value });
   };
 
   const handleCheckBoxChange = (e) => {
     const checked = e.target.checked;
-    const name = e.target.name
-    updateFunction({...formData, [name]: checked})
+    const name = e.target.name;
+    updateFunction({ ...formData, [name]: checked });
   };
 
   return (

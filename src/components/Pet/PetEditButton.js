@@ -2,7 +2,9 @@ function PetEditButton(update) {
   const { updateFunction } = update;
 
   return (
-    <div>PetEditButton</div>
+    <a href="#" className="btn btn-dark">
+      Edit Pet Profile
+    </a>
   );
 }
 
