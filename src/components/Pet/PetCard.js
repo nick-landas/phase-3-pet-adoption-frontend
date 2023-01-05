@@ -1,31 +1,47 @@
-import { PetEditButton } from '../../modules'
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import { PetEditButton } from "../../modules";
+import { useState } from "react";
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
 
-function PetCard() {
+function PetCard({ petInfo }) {
+  const [pet, updatePet] = useState({
+    name: petInfo.name,
+    species: petInfo.species,
+    house_broken: petInfo.house_broken,
+    id: petInfo.id,
+    personality: petInfo.personality,
+    color: petInfo.color
+  })
   return (
     <>
       <div>
-      <Card border="dark"style={{ width: '12rem' }}>
-      <Card.Img variant="top" src="./lizzy.jpg"/>
-      <Card.Body>
-        <Card.Title className="card text-center">Lizzy</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-      </Card.Body >
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item variant="light">Cras justo odio</ListGroup.Item>
-        <ListGroup.Item variant="dark">Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item variant="light">Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body className="card text-center">
-      <a href="#" className="btn btn-dark">Go somewhere</a>
-      </Card.Body>
-    </Card>
-      <PetEditButton></PetEditButton>
-
+        <Card border="dark" style={{ width: "12rem" }}>
+          <Card.Title className="card text-center">{pet.name}</Card.Title>
+          <Card.Img variant="top" src="./lizzy.jpg" />
+          <ListGroup className="list-group-flush">
+            <ListGroup.Item variant="light">
+              Species:{" "}
+              {pet.species[0].toUpperCase() + pet.species.slice(1)}
+            </ListGroup.Item>
+            <ListGroup.Item variant="dark">
+              Color: {pet.color[0].toUpperCase() + pet.color.slice(1)}
+            </ListGroup.Item>
+            <ListGroup.Item variant="light">
+              Weight: {pet.weight} lbs
+            </ListGroup.Item>
+            <ListGroup.Item variant="dark">
+              Housebroken?: {pet.house_broken ? "Yes" : "No"}
+            </ListGroup.Item>
+          </ListGroup>
+          <Card.Body>
+            <Card.Text>
+              {pet.personality}
+            </Card.Text>
+          </Card.Body>
+          <Card.Body className="card text-center">
+          <PetEditButton></PetEditButton>
+          </Card.Body>
+        </Card>
       </div>
     </>
   );

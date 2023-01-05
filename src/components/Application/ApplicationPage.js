@@ -1,5 +1,5 @@
 import { ApplicationForm, ApplicationList } from "../../modules";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function ApplicationPage() {
   const [applicationFormData, updateData] = useState({
@@ -9,6 +9,10 @@ function ApplicationPage() {
     homeAddress: "",
     petName: "",
   });
+
+  useEffect(() => {
+    console.log(applicationFormData)
+  })
 
   return (
     <>
@@ -21,7 +25,7 @@ function ApplicationPage() {
         </section>
       </div>
 
-      <ApplicationForm updateFunction={updateData}></ApplicationForm>
+      <ApplicationForm formData={applicationFormData} updateFunction={updateData}></ApplicationForm>
       <ApplicationList formData={applicationFormData}></ApplicationList>
     </>
   );
