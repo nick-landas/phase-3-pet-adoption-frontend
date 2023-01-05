@@ -28,7 +28,7 @@ html {
     z-index: 1;
   }
 
-  #home .nav-bar {
+  /* #home .nav-bar {
     position: fixed;
     z-index: 3;
     top: 0;
@@ -54,7 +54,7 @@ html {
   }
   .nav-bar ul li:hover a {
     color: white;
-  }
+  } */
 
   #pets .second-img {
     width: 100%;
@@ -124,5 +124,6 @@ html {
   .sticky-top {position: sticky;
   }
 
-  .bg-gradient {background-image: var(--bs-gradient);
-  }
+  .bg-myColor {
+    background-image: linear-gradient(to right,#823604,#f96400 )
+    }

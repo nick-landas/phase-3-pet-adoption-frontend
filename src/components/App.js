@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import { ApplicationPage, Header, Footer, HomePage, Contact, NavBar, OwnerPage, PetPage } from '../modules';
+import { ApplicationPage, Footer, HomePage, Contact, NavBar, OwnerPage, PetPage } from '../modules';
 
 function App() {
   return (

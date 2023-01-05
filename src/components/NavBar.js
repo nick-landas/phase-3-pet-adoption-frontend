@@ -1,11 +1,12 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import '../App.css';
 
 function NavBar() {
   return (
     <>
-        <Navbar bg="secondary" variant="light" sticky="top">
+        <Navbar bg="myColor" variant="dark" sticky="top">
         <Container>
           <Navbar.Brand href="#">U*niQ Pet Adoption Agency</Navbar.Brand>
           <Nav className="ms-auto">
