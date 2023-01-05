@@ -6,14 +6,18 @@ import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 
-function ApplicationCard({ appInfo }) {
+function ApplicationCard({ appInfo, lists, updaters }) {
   const api = `http://localhost:9292/adoption-applications/${appInfo.id}/approve`;
 
-  const [isButtonDisabled, setButtonDisabled] = useState(false);
+  const [isButtonDisabled, setButtonDisabled] = useState(appInfo.accepted);
 
-  const handleClick = (e) => {
-    setButtonDisabled(true);
+  const findByID = (list, id) => {
+    return list.findIndex((el) => {
+      return el.id === id;
+    });
+  };
 
+  const handleClick = () => {
     fetch(api, {
       method: "PATCH",
       headers: {
@@ -22,7 +26,13 @@ function ApplicationCard({ appInfo }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        const petToUpdate = findByID(lists.petList, data[0].id);
+
+        let newPetList = [...lists.petList];
+        newPetList[petToUpdate].owner_id = data[1].id;
+        updaters.updatePetList(newPetList);
+
+        setButtonDisabled(true);
       });
   };
 
@@ -34,7 +44,7 @@ function ApplicationCard({ appInfo }) {
           <Card.Img variant="top" src="./lizzy.jpg" />
           <ListGroup className="list-group-flush">
             <ListGroup.Item variant="light">
-              Adoption_Approved: {appInfo.accepted ? "Accepted" : "Pending"}
+              Adoption status: {appInfo.accepted ? "Accepted" : "Pending"}
             </ListGroup.Item>
             <ListGroup.Item variant="dark">
               Pet: {appInfo.pet_name}

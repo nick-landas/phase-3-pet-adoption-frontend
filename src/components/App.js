@@ -1,19 +1,35 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
-import { ApplicationPage, Footer, HomePage, Contact, NavBar, OwnerPage, PetPage } from '../modules';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../App.css";
+import {
+  ApplicationPage,
+  Footer,
+  HomePage,
+  Contact,
+  NavBar,
+  OwnerPage,
+  PetPage,
+} from "../modules";
+import { useState } from "react";
 
 function App() {
+  const [petList, updatePetList] = useState([]);
+  const [applicationList, updateApplicationList] = useState([]);
+  const [ownerList, updateOwnerList] = useState([]);
+
   return (
     <>
       {/* <Header></Header> */}
       <NavBar></NavBar>
       <HomePage></HomePage>
-      <PetPage></PetPage>
-      <OwnerPage></OwnerPage>
-      <ApplicationPage></ApplicationPage>
+      <PetPage petList={petList} updateList={updatePetList}></PetPage>
+      <OwnerPage ownerList={ownerList} updateList={updateOwnerList}></OwnerPage>
+      <ApplicationPage
+        lists={{ petList, applicationList, ownerList }}
+        updaters={{ updatePetList, updateApplicationList, updateOwnerList }}
+      ></ApplicationPage>
       <Contact></Contact>
       <Footer></Footer>
-  </>
+    </>
   );
 }
 

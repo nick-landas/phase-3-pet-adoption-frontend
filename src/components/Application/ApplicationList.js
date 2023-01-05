@@ -3,17 +3,19 @@ import { useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-function ApplicationList({ formData, appInfo, updateAppInfo }) {
+function ApplicationList({ formData, lists, updaters }) {
   const api = "http://localhost:9292/adoption-applications";
+  const applicationList = lists.applicationList
+  const updateApplicationList = updaters.updateApplicationList
   useEffect(() => {
     fetch(api)
       .then((res) => res.json())
       .then((data) => {
-        updateAppInfo(data);
+        updateApplicationList(data);
       });
   }, []);
   useEffect(() => {
-    console.log(appInfo);
+    console.log(applicationList);
   });
 
   const makeCards = (appInfo) => {
@@ -29,7 +31,7 @@ function ApplicationList({ formData, appInfo, updateAppInfo }) {
             app.phone_number
           }
         >
-          <ApplicationCard appInfo={app}></ApplicationCard>
+          <ApplicationCard appInfo={app} lists={lists} updaters={updaters}></ApplicationCard>
         </Col>
       );
     });
@@ -37,7 +39,7 @@ function ApplicationList({ formData, appInfo, updateAppInfo }) {
   return (
     <>
       <Row xs={1} md={3} lg={5} className="g-4">
-        {makeCards(appInfo)}
+        {makeCards(applicationList)}
       </Row>
     </>
   );

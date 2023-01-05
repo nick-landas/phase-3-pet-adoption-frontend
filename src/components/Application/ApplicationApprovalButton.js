@@ -4,7 +4,7 @@ function ApplicationApprovalButton({ disabled, action }) {
   return (
     <div className="d-grid gap-2" size="sm">
       <Button disabled={disabled} onClick={action}>
-        Approve Application
+        {disabled ? "Application Approved" : "Approve Application"}
       </Button>
     </div>
   );
