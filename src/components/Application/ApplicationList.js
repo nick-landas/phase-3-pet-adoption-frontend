@@ -4,7 +4,7 @@ function ApplicationList({ formData }) {
   return (
     <>
       <div>Application List</div>
-      <ApplicationCard></ApplicationCard>
+      <ApplicationCard ></ApplicationCard>
     </>
   );
 }
