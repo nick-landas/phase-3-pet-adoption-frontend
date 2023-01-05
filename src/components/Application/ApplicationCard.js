@@ -28,6 +28,8 @@ function ApplicationCard({ appInfo, lists, updaters }) {
       .then((data) => {
         const petToUpdate = findByID(lists.petList, data[0].id);
 
+        console.log(data)
+
         let newPetList = [...lists.petList];
         newPetList[petToUpdate].owner_id = data[1].id;
         updaters.updatePetList(newPetList);

@@ -15,7 +15,7 @@ function ApplicationList({ formData, lists, updaters }) {
       });
   }, []);
   useEffect(() => {
-    console.log(applicationList);
+    // console.log(applicationList);
   });
 
   const makeCards = (appInfo) => {

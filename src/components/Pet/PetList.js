@@ -16,7 +16,7 @@ function PetList({ listData, updateList }) {
   }, []);
 
   useEffect(() => {
-    console.log(listData);
+    // console.log(listData);
   });
 
   const makeCards = (petInfo) => {

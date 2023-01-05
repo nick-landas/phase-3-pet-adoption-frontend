@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 
 function ApplicationPage({ lists, updaters }) {
   const [applicationFormData, updateData] = useState({
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    homeAddress: "",
-    petName: "",
+    first_name: "",
+    last_name: "",
+    phone_number: "",
+    home_address: "",
+    pet_name: "",
+    pet_id: null,
   });
 
   useEffect(() => {
@@ -28,6 +29,8 @@ function ApplicationPage({ lists, updaters }) {
       <ApplicationForm
         formData={applicationFormData}
         updateFunction={updateData}
+        lists={lists}
+        updaters={updaters}
       ></ApplicationForm>
       <ApplicationList
         formData={applicationFormData}
