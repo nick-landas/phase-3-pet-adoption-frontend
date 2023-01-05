@@ -1,12 +1,12 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-function PetForm(props) {
-  const { formData, updateFunction } = props;
+function PetForm({formData, updateFunction, listData, updateList}) {
+  const api = "http://localhost:9292/pets";
 
   const handleChange = (e) => {
-    const value = e.target.value;
     const name = e.target.name;
+    const value = name === "weight" ? parseInt(e.target.value) : e.target.value;
     updateFunction({ ...formData, [name]: value });
   };
 
@@ -16,10 +16,28 @@ function PetForm(props) {
     updateFunction({ ...formData, [name]: checked });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(JSON.stringify(formData))
+
+    fetch(api, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+
+      },
+      body: JSON.stringify(formData)
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      updateList([...listData, data])
+    })
+  };
+
   return (
     <>
       <div>Add a pet available for adoption.</div>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formSpecies">
           <Form.Label>Species</Form.Label>
           <Form.Control
@@ -50,7 +68,7 @@ function PetForm(props) {
         <Form.Group className="mb-3" controlId="formIsHousebroken">
           <Form.Label>House Training</Form.Label>
           <Form.Check
-            name="isHousebroken"
+            name="house_broken"
             type="checkbox"
             label="Is the pet housebroken?"
             onChange={handleCheckBoxChange}

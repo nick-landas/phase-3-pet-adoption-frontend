@@ -1,34 +1,40 @@
 import { PetCard } from "../../modules";
-import { useState, useEffect } from 'react'
+import { useEffect } from "react";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
-function PetList({ formData }) {
-  const [ petData, updatePetData ] = useState([])
-
+function PetList({ listData, updateList }) {
   // useeffect to make api call
-  const api = 'http://localhost:9292/pets'
+  const api = "http://localhost:9292/pets";
 
   useEffect(() => {
     fetch(api)
-    .then((res) => res.json())
-    .then((data) => {
-      updatePetData(data)
-    })
-  }, [])
+      .then((res) => res.json())
+      .then((data) => {
+        updateList(data);
+      });
+  }, []);
 
   useEffect(() => {
-    console.log(petData)
-  })
+    console.log(listData);
+  });
 
   const makeCards = (petInfo) => {
-    return (petInfo.map((pet) => {
-      return <PetCard petInfo={pet}></PetCard>
-    }))
-  }
+    return petInfo.map((pet) => {
+      return (
+        <Col key={pet.name + pet.species + pet.weight + pet.personality}>
+          <PetCard petInfo={pet}></PetCard>
+        </Col>
+      );
+    });
+  };
 
   return (
     <>
       <div>Pet List</div>
-      {makeCards(petData)}
+      <Row xs={1} md={3} lg={5} className="g-4">
+        {makeCards(listData)}
+      </Row>
     </>
   );
 }

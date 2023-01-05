@@ -6,14 +6,16 @@ function PetPage() {
     species: "",
     color: "",
     weight: "",
-    isHousebroken: false,
+    house_broken: false,
     name: "",
     personality: "",
   });
 
+  const [petList, updateList] = useState([]);
+
   useEffect(() => {
-    console.log(petFormData)
-  })
+    console.log(petFormData);
+  });
 
   return (
     <>
@@ -24,10 +26,18 @@ function PetPage() {
             <h2>Pets</h2>
           </div>
         </section>
-
       </div>
-      <PetForm formData={petFormData} updateFunction={updateData}></PetForm>
-      <PetList formData={petFormData}></PetList>
+      <PetForm
+        listData={petList}
+        updateList={updateList}
+        formData={petFormData}
+        updateFunction={updateData}
+      ></PetForm>
+      <PetList
+        listData={petList}
+        updateList={updateList}
+        formData={petFormData}
+      ></PetList>
     </>
   );
 }
