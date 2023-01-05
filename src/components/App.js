@@ -1,4 +1,3 @@
-import {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import { ApplicationPage, Footer, HomePage, Contact, NavBar, OwnerPage, PetPage } from '../modules';

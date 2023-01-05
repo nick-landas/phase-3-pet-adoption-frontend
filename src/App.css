@@ -2,31 +2,31 @@ html {
   scroll-behavior: smooth;
 }
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  ::-webkit-scrollbar {
-      display: none;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  display: none;
+}
 
-  #home, #pets, #owners, #application, #contact {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-  }
+#home, #pets, #owners, #application, #contact {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
 
-  #home .back-img {
-    width: 100%;
-    height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');
-    /* background-color: red; */
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    z-index: 1;
-  }
+#home .back-img {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');
+  /* background-color: red; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+}
 
   /* #home .nav-bar {
     position: fixed;
@@ -56,74 +56,74 @@ html {
     color: white;
   } */
 
-  #pets .second-img {
-    width: 100%;
-    height: 100%;
-    background-image: url('./images/lenstravelier-PNXnfta-6-4-unsplash.jpg');
-    /* background-color: red; */
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    z-index: 1;
-  }
-  #owners .third-img {
-    width: 100%;
-    height: 100%;
-    background-image: url('./images/jean-beller-yhUqpjd1F9I-unsplash.jpg');
-    /* background-color: red; */
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    z-index: 1;
-  }
-  #application .fourth-img {
-    width: 100%;
-    height: 100%;
-    background-image: url('./images/zdenek-machacek-k8z65TBa9dY-unsplash.jpg');
-    /* background-color: red; */
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    z-index: 1;
-  }
-  #contact .fifth-img {
-    width: 100%;
-    height: 100%;
-    background-image: url('./images/jason-hawke-m2vM53nx0uA-unsplash.jpg');
-    /* background-color: red; */
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    z-index: 1;
-  }
-  #home .title, #pets .title, #owners .title, #application .title, #contact .title {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  h2 {color: white;
-    font-family: helvetica;
-    font-weight: 700;
-    font-size: 70px;
-    letter-spacing: 2px;
-    }
-  
-  .back-img, .second-img, .third-img, .fourth-img, .fifth-img {
-    background-attachment: fixed;
+#pets .second-img {
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/lenstravelier-PNXnfta-6-4-unsplash.jpg');
+  /* background-color: red; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+}
+#owners .third-img {
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/jean-beller-yhUqpjd1F9I-unsplash.jpg');
+  /* background-color: red; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+}
+#application .fourth-img {
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/zdenek-machacek-k8z65TBa9dY-unsplash.jpg');
+  /* background-color: red; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+}
+#contact .fifth-img {
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/jason-hawke-m2vM53nx0uA-unsplash.jpg');
+  /* background-color: red; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+}
+#home .title, #pets .title, #owners .title, #application .title, #contact .title {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2 {color: white;
+  font-family: helvetica;
+  font-weight: 700;
+  font-size: 70px;
+  letter-spacing: 2px;
   }
 
-  .sticky-top {position: sticky;
-  }
+.back-img, .second-img, .third-img, .fourth-img, .fifth-img {
+  background-attachment: fixed;
+}
 
-  .bg-myColor {
-    background-image: linear-gradient(to right,#823604,#f96400 )
-    }
+.sticky-top {position: sticky;
+}
+
+.bg-myColor {
+  background-image: linear-gradient(to right,#823604,#f96400 )
+  }

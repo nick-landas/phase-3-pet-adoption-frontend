@@ -7,9 +7,9 @@ function PetCard() {
     <>
       <div>
       <Card border="dark"style={{ width: '12rem' }}>
-      <Card.Img variant="top" src="./lizzy.jpg" />
+      <Card.Img variant="top" src="./lizzy.jpg"/>
       <Card.Body>
-        <Card.Title className="card text-center" >Lizzy</Card.Title>
+        <Card.Title className="card text-center">Lizzy</Card.Title>
         <Card.Text>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
