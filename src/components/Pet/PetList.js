@@ -1,9 +1,9 @@
 import { PetCard } from '../../modules';
 
-function PetList() {
+function PetList({ formData }) {
   return (
     <>
-      <div>&ensp;Pet List</div>
+      <div>Pet List</div>
       <PetCard></PetCard>
     </>
   );

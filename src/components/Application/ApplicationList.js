@@ -1,9 +1,9 @@
 import { ApplicationCard } from '../../modules';
 
-function ApplicationList() {
+function ApplicationList({ formData }) {
   return (
     <>
-      <div>&ensp;Application List</div>
+      <div>Application List</div>
       <ApplicationCard></ApplicationCard>
     </>
   );

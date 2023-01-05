@@ -1,9 +1,9 @@
 import { OwnerCard } from '../../modules';
 
-function OwnerList() {
+function OwnerList({ formData }) {
   return (
     <>
-      <div>&ensp;Owner List</div>
+      <div>Owner List</div>
       <OwnerCard></OwnerCard>
     </>
   );
