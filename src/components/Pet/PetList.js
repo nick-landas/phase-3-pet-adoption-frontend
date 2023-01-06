@@ -15,10 +15,6 @@ function PetList({ listData, updateList }) {
       });
   }, []);
 
-  useEffect(() => {
-    console.log(listData);
-  });
-
   const makeCards = (petInfo) => {
     return petInfo.map((pet) => {
       return (

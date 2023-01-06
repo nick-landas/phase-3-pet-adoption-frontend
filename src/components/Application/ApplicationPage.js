@@ -1,33 +1,38 @@
 import { ApplicationForm, ApplicationList } from "../../modules";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-function ApplicationPage() {
+function ApplicationPage({ lists, updaters }) {
   const [applicationFormData, updateData] = useState({
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    homeAddress: "",
-    petName: "",
+    first_name: "",
+    last_name: "",
+    phone_number: "",
+    home_address: "",
+    pet_name: "",
+    pet_id: null,
   });
-  const [applicationList, updateList] = useState([]);
-
-  useEffect(() => {
-    console.log(applicationFormData)
-  })
 
   return (
     <>
       <div>
         <section id="application">
           <div className="fourth-img"></div>
-            <div className="title">
-              <h2>Application</h2>
-            </div>
+          <div className="title">
+            <h2>Application</h2>
+          </div>
         </section>
       </div>
 
-      <ApplicationForm formData={applicationFormData} updateFunction={updateData}></ApplicationForm>
-      <ApplicationList formData={applicationFormData} appInfo={applicationList} updateAppInfo={updateList}></ApplicationList>
+      <ApplicationForm
+        formData={applicationFormData}
+        updateFunction={updateData}
+        lists={lists}
+        updaters={updaters}
+      ></ApplicationForm>
+      <ApplicationList
+        formData={applicationFormData}
+        lists={lists}
+        updaters={updaters}
+      ></ApplicationList>
     </>
   );
 }

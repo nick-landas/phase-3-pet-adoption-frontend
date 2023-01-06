@@ -1,7 +1,7 @@
 import { PetForm, PetList } from "../../modules";
 import { useState, useEffect } from "react";
 
-function PetPage() {
+function PetPage({ petList, updateList }) {
   const [petFormData, updateData] = useState({
     species: "",
     color: "",
@@ -9,12 +9,6 @@ function PetPage() {
     house_broken: false,
     name: "",
     personality: "",
-  });
-
-  const [petList, updateList] = useState([]);
-
-  useEffect(() => {
-    console.log(petFormData);
   });
 
   return (

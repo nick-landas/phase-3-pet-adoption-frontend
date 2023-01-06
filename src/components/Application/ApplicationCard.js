@@ -6,14 +6,19 @@ import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 
-function ApplicationCard({ appInfo }) {
+function ApplicationCard({ appInfo, lists, updaters }) {
   const api = `http://localhost:9292/adoption-applications/${appInfo.id}/approve`;
 
-  const [isButtonDisabled, setButtonDisabled] = useState(false);
+  const [isButtonDisabled, setButtonDisabled] = useState(appInfo.accepted);
+  const [accepted, setAccepted] = useState(appInfo.accepted);
 
-  const handleClick = (e) => {
-    setButtonDisabled(true);
+  const findByID = (list, id) => {
+    return list.findIndex((el) => {
+      return el.id === id;
+    });
+  };
 
+  const handleClick = () => {
     fetch(api, {
       method: "PATCH",
       headers: {
@@ -22,26 +27,44 @@ function ApplicationCard({ appInfo }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        const petToUpdate = findByID(lists.petList, data[0].id);
+        const ownerToUpdate = findByID(lists.ownerList, data[1].id)
+
+        let newPetList = [...lists.petList];
+        newPetList[petToUpdate].owner_id = data[1].id;
+        updaters.updatePetList(newPetList);
+
+        let newOwnerList = [...lists.ownerList];
+        newOwnerList[ownerToUpdate].pets.push(newPetList[petToUpdate]);
+        console.log(newOwnerList);
+        updaters.updateOwnerList(newOwnerList);
+
+        setButtonDisabled(true);
+        setAccepted(true);
       });
   };
 
   return (
     <>
-      <div>ApplicationCard</div>
       <div>
         <Card border="dark" style={{ width: "18rem" }}>
           <Card.Title className="card text-center">{appInfo.date}</Card.Title>
           <Card.Img variant="top" src="./lizzy.jpg" />
           <ListGroup className="list-group-flush">
             <ListGroup.Item variant="light">
-              Adoption_Approved: {appInfo.accepted ? "Accepted" : "Pending"}
+              Adoption status: {accepted ? "Accepted" : "Pending"}
             </ListGroup.Item>
             <ListGroup.Item variant="dark">
-              Pet ID: {appInfo.pet_id}
+              Pet: {appInfo.pet_name}
             </ListGroup.Item>
             <ListGroup.Item variant="light">
-              (Prospective)Owner ID: {appInfo.owner_id}
+              Applicant: {appInfo.owner_name}
+            </ListGroup.Item>
+            <ListGroup.Item variant="dark">
+              Applicant Address: {appInfo.home_address}
+            </ListGroup.Item>
+            <ListGroup.Item variant="light">
+              Applicant Phone #: {appInfo.phone_number}
             </ListGroup.Item>
           </ListGroup>
           <Card.Body className="card text-center">
