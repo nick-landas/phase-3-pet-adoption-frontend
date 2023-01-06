@@ -19,6 +19,14 @@ function OwnerCard({ ownerInfo }) {
         </Card.Title>
         <Card.Subtitle className="bm-2 text-center text-muted">Pets:</Card.Subtitle>
         <ListGroup className="list-group-flush">
+          <ListGroup.Item>
+            Home Address: {ownerInfo.home_address}
+          </ListGroup.Item>
+          <ListGroup.Item>
+            Daytime Phone #: {ownerInfo.phone_number}
+          </ListGroup.Item>
+        </ListGroup>
+        <ListGroup className="list-group-flush">
           {makePets(ownerInfo.pets)}
         </ListGroup>
         <Card.Body>
