@@ -36,7 +36,7 @@ function PetForm({formData, updateFunction, listData, updateList}) {
 
   return (
     <>
-      <div>Add a pet available for adoption.</div>
+      <h1>Add a pet available for adoption</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formSpecies">
           <Form.Label>Species</Form.Label>
