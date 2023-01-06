@@ -24,7 +24,7 @@ export { default as PetForm } from "./components/Pet/PetForm";
 
 // Unrelated Components
 export { default as HomePage } from "./components/HomePage";
-export { default as Contact } from "./components/Contact";
 export { default as NavBar } from "./components/NavBar";
 export { default as Header } from "./components/Header";
+export { default as Contact } from "./components/Contact";
 export { default as Footer } from "./components/Footer";

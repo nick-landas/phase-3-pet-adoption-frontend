@@ -111,16 +111,24 @@ html {
   align-items: center;
 }
 
+#contact .title {
+  flex-direction: column;
+}
+
 h1{
   display: flex;
   justify-content: center;
 }
-h2 {color: white;
+h2, h3 {color: white;
   font-family: helvetica;
   font-weight: 700;
-  font-size: 70px;
+  font-size: 20px;
   letter-spacing: 2px;
-  }
+}
+
+h2 {
+  font-size: 70px;
+}
 
 .back-img, .second-img, .third-img, .fourth-img, .fifth-img {
   background-attachment: fixed;
