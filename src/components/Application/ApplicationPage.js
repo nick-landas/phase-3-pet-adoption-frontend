@@ -1,5 +1,5 @@
 import { ApplicationForm, ApplicationList } from "../../modules";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function ApplicationPage({ lists, updaters }) {
   const [applicationFormData, updateData] = useState({
@@ -9,10 +9,6 @@ function ApplicationPage({ lists, updaters }) {
     home_address: "",
     pet_name: "",
     pet_id: null,
-  });
-
-  useEffect(() => {
-    console.log(applicationFormData);
   });
 
   return (

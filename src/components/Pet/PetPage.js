@@ -11,10 +11,6 @@ function PetPage({ petList, updateList }) {
     personality: "",
   });
 
-  useEffect(() => {
-    console.log(petFormData);
-  });
-
   return (
     <>
       <div>

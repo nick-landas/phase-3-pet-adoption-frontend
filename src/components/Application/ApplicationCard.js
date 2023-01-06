@@ -10,6 +10,7 @@ function ApplicationCard({ appInfo, lists, updaters }) {
   const api = `http://localhost:9292/adoption-applications/${appInfo.id}/approve`;
 
   const [isButtonDisabled, setButtonDisabled] = useState(appInfo.accepted);
+  const [accepted, setAccepted] = useState(appInfo.accepted);
 
   const findByID = (list, id) => {
     return list.findIndex((el) => {
@@ -27,14 +28,19 @@ function ApplicationCard({ appInfo, lists, updaters }) {
       .then((response) => response.json())
       .then((data) => {
         const petToUpdate = findByID(lists.petList, data[0].id);
-
-        console.log(data)
+        const ownerToUpdate = findByID(lists.ownerList, data[1].id)
 
         let newPetList = [...lists.petList];
         newPetList[petToUpdate].owner_id = data[1].id;
         updaters.updatePetList(newPetList);
 
+        let newOwnerList = [...lists.ownerList];
+        newOwnerList[ownerToUpdate].pets.push(newPetList[petToUpdate]);
+        console.log(newOwnerList);
+        updaters.updateOwnerList(newOwnerList);
+
         setButtonDisabled(true);
+        setAccepted(true);
       });
   };
 
@@ -46,7 +52,7 @@ function ApplicationCard({ appInfo, lists, updaters }) {
           <Card.Img variant="top" src="./lizzy.jpg" />
           <ListGroup className="list-group-flush">
             <ListGroup.Item variant="light">
-              Adoption status: {appInfo.accepted ? "Accepted" : "Pending"}
+              Adoption status: {accepted ? "Accepted" : "Pending"}
             </ListGroup.Item>
             <ListGroup.Item variant="dark">
               Pet: {appInfo.pet_name}

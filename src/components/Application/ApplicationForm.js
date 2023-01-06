@@ -14,9 +14,9 @@ function ApplicationForm({ formData, updateFunction, lists, updaters }) {
   const handleSelect = (e) => {
     const value = e.target.value === "Select a pet" ? "" : e.target.value;
     const name = e.target.name;
-    const id = lists.petList.findIndex((pet) => {
+    const id = lists.petList.find((pet) => {
       return pet.name === value;
-    });
+    }).id;
     updateFunction({ ...formData, [name]: value, pet_id: id });
   };
 
@@ -46,7 +46,7 @@ function ApplicationForm({ formData, updateFunction, lists, updaters }) {
           date: `${date.getMonth()}-${date.getDate()}-${date.getFullYear()}`,
           accepted: false,
           pet_id: formData.pet_id,
-          owner_id: lists.ownerList[lists.ownerList.length - 1].id,
+          owner_id: ownerData.id,
         };
 
         fetch(applicationApi, {
@@ -59,8 +59,6 @@ function ApplicationForm({ formData, updateFunction, lists, updaters }) {
         .then((response) => response.json())
         .then((applicationData) => {
           updaters.updateApplicationList([...lists.applicationList, applicationData])
-          console.log(lists.ownerList);
-          console.log(lists.applicationList);
         })
       });
   };
