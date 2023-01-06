@@ -1,4 +1,4 @@
-import { PetEditButton } from "../../modules";
+import { PetDeleteButton } from "../../modules";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 
@@ -34,7 +34,7 @@ function PetCard({ petInfo }) {
           </Card.Text>
         </Card.Body>
         <Card.Body className="card text-center">
-          <PetEditButton></PetEditButton>
+          <PetDeleteButton></PetDeleteButton>
         </Card.Body>
       </Card>
     </div>

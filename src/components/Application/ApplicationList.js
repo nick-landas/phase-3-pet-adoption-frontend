@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-function ApplicationList({ formData, lists, updaters }) {
+function ApplicationList({ lists, updaters }) {
   const api = "http://localhost:9292/adoption-applications";
   const applicationList = lists.applicationList
   const updateApplicationList = updaters.updateApplicationList
@@ -14,9 +14,6 @@ function ApplicationList({ formData, lists, updaters }) {
         updateApplicationList(data);
       });
   }, []);
-  useEffect(() => {
-    // console.log(applicationList);
-  });
 
   const makeCards = (appInfo) => {
     return appInfo.map((app) => {

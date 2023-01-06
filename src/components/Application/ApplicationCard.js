@@ -1,5 +1,5 @@
 import {
-  ApplicationEditButton,
+  ApplicationDeleteButton,
   ApplicationApprovalButton,
 } from "../../modules";
 import { useState } from "react";
@@ -49,7 +49,7 @@ function ApplicationCard({ appInfo, lists, updaters }) {
       <div>
         <Card border="dark" style={{ width: "18rem" }}>
           <Card.Title className="card text-center">{appInfo.date}</Card.Title>
-          <Card.Img variant="top" src="./lizzy.jpg" />
+          <Card.Img variant="top" src={appInfo.pet_image} />
           <ListGroup className="list-group-flush">
             <ListGroup.Item variant="light">
               Adoption status: {accepted ? "Accepted" : "Pending"}
@@ -68,7 +68,7 @@ function ApplicationCard({ appInfo, lists, updaters }) {
             </ListGroup.Item>
           </ListGroup>
           <Card.Body className="card text-center">
-            <ApplicationEditButton></ApplicationEditButton>
+            <ApplicationDeleteButton></ApplicationDeleteButton>
           </Card.Body>
           <Card.Body className="card text-center">
             <ApplicationApprovalButton

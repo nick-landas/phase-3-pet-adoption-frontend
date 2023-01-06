@@ -48,7 +48,7 @@ function ApplicationForm({ formData, updateFunction, lists, updaters }) {
 
         const date = new Date();
         const newApplication = {
-          date: `${date.getMonth()}-${date.getDate()}-${date.getFullYear()}`,
+          date: `${date.getMonth() + 1}-${date.getDate()}-${date.getFullYear()}`,
           accepted: false,
           pet_id: formData.pet_id,
           owner_id: ownerData.id,

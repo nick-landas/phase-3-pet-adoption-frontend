@@ -1,4 +1,4 @@
-import { OwnerEditForm, OwnerList } from "../../modules";
+import { OwnerList } from "../../modules";
 import { useState } from "react";
 function OwnerPage({ ownerList, updateList }) {
   const [ownerFormData, updateData] = useState({
@@ -27,8 +27,6 @@ function OwnerPage({ ownerList, updateList }) {
           </div>
         </section>
       </div>
-
-      <OwnerEditForm updateFunction={updateData}></OwnerEditForm>
       <OwnerList ownerList={ownerList} updateList={updateList} formData={ownerFormData}></OwnerList>
     </>
   );

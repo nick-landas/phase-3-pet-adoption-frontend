@@ -1,5 +1,5 @@
 import { PetForm, PetList } from "../../modules";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function PetPage({ petList, updateList }) {
   const [petFormData, updateData] = useState({
