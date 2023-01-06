@@ -1,5 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
 
 function PetForm({formData, updateFunction, listData, updateList}) {
   const api = "http://localhost:9292/pets";
@@ -36,7 +37,8 @@ function PetForm({formData, updateFunction, listData, updateList}) {
 
   return (
     <>
-      <div>Add a pet available for adoption.</div>
+      <h1>Add a pet available for adoption</h1>
+      <Container className="p-5">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formSpecies">
           <Form.Label>Species</Form.Label>
@@ -100,6 +102,7 @@ function PetForm({formData, updateFunction, listData, updateList}) {
           Submit
         </Button>
       </Form>
+      </Container>
     </>
   );
 }

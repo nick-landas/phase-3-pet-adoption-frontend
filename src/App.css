@@ -110,6 +110,11 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+h1{
+  display: flex;
+  justify-content: center;
+}
 h2 {color: white;
   font-family: helvetica;
   font-weight: 700;
