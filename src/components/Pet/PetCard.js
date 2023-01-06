@@ -1,5 +1,4 @@
 import { PetEditButton } from "../../modules";
-import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 
@@ -12,7 +11,7 @@ function PetCard({ petInfo }) {
       <Card border="dark" style={{ width: "18rem" }}>
         <Card.Title className="card text-center">{petInfo.name}</Card.Title>
         <Card.Subtitle className="bm-2 text-center text-muted">{availability(petInfo.owner_id)}</Card.Subtitle>
-        <Card.Img variant="top" src="./lizzy.jpg" />
+        <Card.Img variant="top" src={petInfo.image} />
         <ListGroup className="list-group-flush">
           <ListGroup.Item variant="light">
             Species:{" "}
