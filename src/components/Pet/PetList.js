@@ -31,7 +31,7 @@ function PetList({ listData, updateList }) {
 
   return (
     <>
-      <div>Pet List</div>
+      <h1>Pet List</h1>
       <Row xs={1} md={3} lg={5} className="g-4">
         {makeCards(listData)}
       </Row>

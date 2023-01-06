@@ -3,7 +3,7 @@ import { OwnerCard } from '../../modules';
 function OwnerList({ formData }) {
   return (
     <>
-      <div>Owner List</div>
+      <h1>Owner List</h1>
       <OwnerCard></OwnerCard>
     </>
   );
