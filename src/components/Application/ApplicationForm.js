@@ -22,7 +22,7 @@ function ApplicationForm(props) {
   };
 
   return (
-    <Container className="p-3">
+    <Container className="p-5">
       <Row>
         <header className="App-header">
           <h1>Adoption Application</h1>
@@ -85,7 +85,7 @@ function ApplicationForm(props) {
                     <option>Spark</option>
                   </Form.Select>
                   <Form.Text className="text-muted text-align: center">
-                    Please select the pet you'd like to adopt. Adoptions are based on multiple factors and not guaranteed.
+                    Please select the pet you'd like to adopt. Adoptions are based on multiple criteria and not guaranteed. More than one pet may be applied for through a separate application.
                   </Form.Text>
               </Form.Group>
             <Button variant="primary" type="submit">
