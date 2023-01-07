@@ -1,4 +1,3 @@
-// import { OwnerEditButton } from "../../modules";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,7 +14,7 @@ function OwnerCard({ ownerInfo, deleteOwner, id }) {
 
   return (
     <div >
-      <Card border="dark" style={{ width: "18rem" }}>
+      <Card className="shadow p-3 mb-5 bg-white rounded"border="dark" style={{ width: "18rem" }}>
         <Card.Title className="card text-center">
           {ownerInfo.last_name + ", " + ownerInfo.first_name}
         </Card.Title>

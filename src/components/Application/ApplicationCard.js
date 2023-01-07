@@ -1,7 +1,4 @@
-import {
-  ApplicationDeleteButton,
-  ApplicationApprovalButton,
-} from "../../modules";
+import {ApplicationApprovalButton} from "../../modules";
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -47,7 +44,7 @@ function ApplicationCard({ appInfo, lists, updaters }) {
   return (
     <>
       <div>
-        <Card border="dark" style={{ width: "18rem" }}>
+        <Card className="shadow-lg p-3 mb-5 bg-white rounded"border="dark" style={{ width: "18rem" }}>
           <Card.Title className="card text-center">{appInfo.date}</Card.Title>
           <Card.Img variant="top" src={appInfo.pet_image} />
           <ListGroup className="list-group-flush">
