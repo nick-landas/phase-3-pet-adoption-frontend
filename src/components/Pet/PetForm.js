@@ -19,6 +19,7 @@ function PetForm({formData, updateFunction, listData, updateList}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    e.target.reset();
     console.log(JSON.stringify(formData))
 
     fetch(api, {

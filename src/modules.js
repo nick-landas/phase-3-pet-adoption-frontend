@@ -3,7 +3,7 @@ export { default as App } from "./components/App";
 // Application Components
 export { default as ApplicationPage } from "./components/Application/ApplicationPage";
 export { default as ApplicationCard } from "./components/Application/ApplicationCard";
-export { default as ApplicationEditButton } from "./components/Application/ApplicationDeleteButton";
+export { default as ApplicationDeleteButton } from "./components/Application/ApplicationDeleteButton";
 export { default as ApplicationList } from "./components/Application/ApplicationList";
 export { default as ApplicationForm } from "./components/Application/ApplicationForm";
 export { default as ApplicationApprovalButton } from "./components/Application/ApplicationApprovalButton";
@@ -18,7 +18,7 @@ export { default as OwnerEditForm } from "./components/Owner/OwnerEditForm";
 // Pet Components
 export { default as PetPage } from "./components/Pet/PetPage";
 export { default as PetCard } from "./components/Pet/PetCard";
-export { default as PetEditButton } from "./components/Pet/PetDeleteButton";
+export { default as PetDeleteButton } from "./components/Pet/PetDeleteButton";
 export { default as PetList } from "./components/Pet/PetList";
 export { default as PetForm } from "./components/Pet/PetForm";
 

@@ -1,5 +1,5 @@
 import {
-  ApplicationEditButton,
+  ApplicationDeleteButton,
   ApplicationApprovalButton,
 } from "../../modules";
 import { useState } from "react";
@@ -68,7 +68,13 @@ function ApplicationCard({ appInfo, lists, updaters }) {
             </ListGroup.Item>
           </ListGroup>
           <Card.Body className="card text-center">
-            <ApplicationEditButton></ApplicationEditButton>
+          <button type='button'className="btn btn-dark" 
+          onClick={(e) =>{
+              console.log('deleting app...')
+          }}
+          >
+            Delete Application
+          </button>
           </Card.Body>
           <Card.Body className="card text-center">
             <ApplicationApprovalButton

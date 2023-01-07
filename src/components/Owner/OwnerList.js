@@ -1,9 +1,10 @@
 import { OwnerCard } from "../../modules";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 function OwnerList({ ownerList, updateList }) {
+  const [owners, setOwners] = useState([])
   const api = "http://localhost:9292/owners";
 
   useEffect(() => {
@@ -14,6 +15,15 @@ function OwnerList({ ownerList, updateList }) {
       });
   }, []);
 
+  function deleteOwner(id) {
+    console.log("deleting owner...")
+    fetch(api + `/${id}`, {
+      method: 'DELETE'
+    }).then(resp => {
+      setOwners(owners.filter(owner => owner.id !== id))
+    })
+  }
+
   const makeCards = (ownerList) => {
     return ownerList.map((owner) => {
       if (owner.pets.length < 1) {
@@ -21,7 +31,7 @@ function OwnerList({ ownerList, updateList }) {
       }
       return (
         <Col key={owner.id}>
-          <OwnerCard ownerInfo={owner}></OwnerCard>
+          <OwnerCard ownerInfo={owner} id={owner.id} deleteOwner={deleteOwner}></OwnerCard>
         </Col>
       );
     });
