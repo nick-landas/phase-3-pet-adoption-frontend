@@ -7,7 +7,7 @@ function PetCard({ petInfo, deletePet, id }) {
   };
   return (
     <div>
-      <Card className="shadow-lg p-3 mb-5 bg-white rounded"border="dark" style={{ width: "18rem" }}>
+      <Card className="shadow p-3 mb-5 bg-white rounded"border="dark" style={{ width: "18rem" }}>
         <Card.Title className="card text-center">{petInfo.name}</Card.Title>
         <Card.Subtitle className="bm-2 text-center text-muted">{availability(petInfo.owner_id)}</Card.Subtitle>
         <Card.Img variant="top" src={petInfo.image} />
