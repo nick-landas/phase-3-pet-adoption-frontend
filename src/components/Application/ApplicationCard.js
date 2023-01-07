@@ -68,7 +68,6 @@ function ApplicationCard({ appInfo, lists, updaters }) {
             </ListGroup.Item>
           </ListGroup>
           <Card.Body className="card text-center">
-            <ApplicationDeleteButton></ApplicationDeleteButton>
           <button type='button'className="btn btn-dark" 
           onClick={(e) =>{
               console.log('deleting app...')
