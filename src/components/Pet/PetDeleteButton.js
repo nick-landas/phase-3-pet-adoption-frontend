@@ -1,11 +1,11 @@
-function PetDeleteButton(update) {
-  const { updateFunction } = update;
+// function PetDeleteButton(update) {
+//   const { updateFunction, deletePet } = update;
 
-  return (
-    <a href="#" className="btn btn-dark">
-      Delete Pet Profile
-    </a>
-  );
-}
+//   return (
+//     <button type='button' onClick={() => deletePet(pet)} className="btn btn-dark">
+//       Delete Pet Profile
+//     </button>
+//   );
+// }
 
-export default PetDeleteButton;
+// export default PetDeleteButton;

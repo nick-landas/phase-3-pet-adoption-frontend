@@ -10,7 +10,6 @@ function PetPage({ petList, updateList }) {
     name: "",
     personality: "",
   });
-
   return (
     <>
       <div>

@@ -27,6 +27,7 @@ function ApplicationForm({ formData, updateFunction, lists, updaters }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    e.target.reset();
 
     const newOwner = {
       first_name: formData.first_name,
@@ -34,6 +35,7 @@ function ApplicationForm({ formData, updateFunction, lists, updaters }) {
       home_address: formData.home_address,
       phone_number: formData.phone_number,
     };
+
 
     fetch(ownerApi, {
       method: "POST",
@@ -66,10 +68,10 @@ function ApplicationForm({ formData, updateFunction, lists, updaters }) {
           updaters.updateApplicationList([...lists.applicationList, applicationData])
         })
       });
-  };
+    };
 
-  const options = (petList) => {
-    return petList.map((pet) => {
+    const options = (petList) => {
+      return petList.map((pet) => {
       return <option key={pet.id}>{pet.name}</option>;
     });
   };
@@ -120,7 +122,7 @@ function ApplicationForm({ formData, updateFunction, lists, updaters }) {
                     type="text"
                     label="Enter a good daytime phone number"
                     onChange={handleChange}
-                  />
+                    />
               </Form.Group>
             </Row>
             <Row>
@@ -131,7 +133,6 @@ function ApplicationForm({ formData, updateFunction, lists, updaters }) {
                     as="select"
                     size="lg"
                     onChange={handleSelect}
-                    custom
                   >
                     <option>Select a pet</option>
                     {options(lists.petList)}

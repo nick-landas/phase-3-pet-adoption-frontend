@@ -1,8 +1,8 @@
-import { PetDeleteButton } from "../../modules";
+// import { PetDeleteButton } from "../../modules";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 
-function PetCard({ petInfo }) {
+function PetCard({ petInfo, deletePet, id }) {
   const availability = (owner_id) => {
     return owner_id === null ? "Available for Adoption" : "Already Adopted";
   };
@@ -34,7 +34,9 @@ function PetCard({ petInfo }) {
           </Card.Text>
         </Card.Body>
         <Card.Body className="card text-center">
-          <PetDeleteButton></PetDeleteButton>
+        <button type='button' onClick={() => deletePet(id)} className="btn btn-dark">
+          Delete Pet Profile
+      </button>
         </Card.Body>
       </Card>
     </div>

@@ -3,6 +3,7 @@ export { default as App } from "./components/App";
 // Application Components
 export { default as ApplicationPage } from "./components/Application/ApplicationPage";
 export { default as ApplicationCard } from "./components/Application/ApplicationCard";
+export { default as ApplicationDeleteButton } from "./components/Application/ApplicationDeleteButton";
 export { default as ApplicationList } from "./components/Application/ApplicationList";
 export { default as ApplicationForm } from "./components/Application/ApplicationForm";
 export { default as ApplicationDeleteButton } from "./components/Application/ApplicationDeleteButton";

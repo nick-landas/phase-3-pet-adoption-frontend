@@ -1,12 +1,12 @@
 import { PetCard } from "../../modules";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 function PetList({ listData, updateList }) {
-  // useeffect to make api call
-  const api = "http://localhost:9292/pets";
 
+  const api = "http://localhost:9292/pets";
+  const [pets, setPets] = useState([])
   useEffect(() => {
     fetch(api)
       .then((res) => res.json())
@@ -15,16 +15,25 @@ function PetList({ listData, updateList }) {
       });
   }, []);
 
+  function deletePet (id) {
+    console.log("deleting...")
+    fetch(api + `/${id}`, {
+      method: 'DELETE'
+    }).then(resp => {
+      setPets(pets.filter(pet => pet.id !== id))
+    })
+  }
+
   const makeCards = (petInfo) => {
     return petInfo.map((pet) => {
       return (
         <Col key={pet.name + pet.species + pet.weight + pet.personality}>
-          <PetCard petInfo={pet}></PetCard>
+          <PetCard petInfo={pet} id={pet.id} deletePet={deletePet}></PetCard>
         </Col>
       );
     });
   };
-
+  
   return (
     <>
       <h1>Pet List</h1>
