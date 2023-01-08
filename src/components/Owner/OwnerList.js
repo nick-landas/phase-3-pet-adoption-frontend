@@ -1,17 +1,16 @@
 import { OwnerCard } from "../../modules";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-function OwnerList({ ownerList, updateList }) {
-  const [owners, setOwners] = useState([])
+function OwnerList( {lists, updaters }) {
   const api = "http://localhost:9292/owners";
 
   useEffect(() => {
     fetch(api)
       .then((res) => res.json())
       .then((data) => {
-        updateList(data);
+        updaters.updateOwnerList(data);
       });
   }, []);
 
@@ -20,7 +19,8 @@ function OwnerList({ ownerList, updateList }) {
     fetch(api + `/${id}`, {
       method: 'DELETE'
     }).then(resp => {
-      setOwners(owners.filter(owner => owner.id !== id))
+      updaters.updateOwnerList(lists.ownerList.filter(owner => owner.id !== id))
+      updaters.updateApplicationList(lists.applicationList.filter(application => application.owner_id !== id))
     })
   }
 
@@ -39,7 +39,7 @@ function OwnerList({ ownerList, updateList }) {
 
   return (
     <Row xs={1} md={3} lg={5} className="g-4">
-      {makeCards(ownerList)}
+      {makeCards(lists.ownerList)}
     </Row>
   );
 }

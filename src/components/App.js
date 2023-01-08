@@ -22,7 +22,7 @@ function App() {
       <NavBar></NavBar>
       <HomePage></HomePage>
       <PetPage petList={petList} updateList={updatePetList}></PetPage>
-      <OwnerPage ownerList={ownerList} updateList={updateOwnerList}></OwnerPage>
+      <OwnerPage lists={{ownerList, applicationList}} updaters={{updateOwnerList, updateApplicationList}}></OwnerPage>
       <ApplicationPage
         lists={{ petList, applicationList, ownerList }}
         updaters={{ updatePetList, updateApplicationList, updateOwnerList }}

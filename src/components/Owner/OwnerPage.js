@@ -1,6 +1,6 @@
 import { OwnerList } from "../../modules";
 import { useState } from "react";
-function OwnerPage({ ownerList, updateList }) {
+function OwnerPage({lists, updaters }) {
   const [ownerFormData, updateData] = useState({
     firstName: "",
     lastName: "",
@@ -9,7 +9,7 @@ function OwnerPage({ ownerList, updateList }) {
   });
 
   const ownerPageText = () => {
-    if (ownerList.length === 0 || ownerList.every((owner) => owner.pets.length === 0)) {
+    if (lists.ownerList.length === 0 || lists.ownerList.every((owner) => owner.pets.length === 0)) {
       return "We currently have no registered adoptions. Would you like to be the first?"
     }
     else {
@@ -27,7 +27,7 @@ function OwnerPage({ ownerList, updateList }) {
           </div>
         </section>
       </div>
-      <OwnerList ownerList={ownerList} updateList={updateList} formData={ownerFormData}></OwnerList>
+      <OwnerList lists={lists} updaters={updaters} formData={ownerFormData}></OwnerList>
     </>
   );
 }

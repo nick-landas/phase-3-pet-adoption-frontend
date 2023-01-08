@@ -7,7 +7,7 @@ import "../style.css"
 function PetList({ listData, updateList }) {
 
   const api = "http://localhost:9292/pets";
-  const [pets, setPets] = useState([]);
+
 
   const [currentPage, setCurrentPage] = useState([1]);
   const [itemsPerPage, setItemsPerPage] = useState([5]);
@@ -57,7 +57,7 @@ function PetList({ listData, updateList }) {
     fetch(api + `/${id}`, {
       method: 'DELETE'
     }).then(resp => {
-      setPets(pets.filter(pet => pet.id !== id))
+      updateList(listData.filter(pet => pet.id !== id))
     })
   }
 
