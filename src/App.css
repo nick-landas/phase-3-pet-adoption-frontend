@@ -144,3 +144,14 @@ h2 {
 .customBGColor {
   background: gray;
 }
+
+#main-container {
+  display: flex;
+}
+
+#adopt-form {
+  max-width:800px;
+}
+.adoptbtn {
+  background: #f96400;
+}

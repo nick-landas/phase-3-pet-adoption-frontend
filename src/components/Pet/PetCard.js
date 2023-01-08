@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import "../../App.css"
 
 function PetCard({ petInfo, deletePet, id }) {
   const availability = (owner_id) => {

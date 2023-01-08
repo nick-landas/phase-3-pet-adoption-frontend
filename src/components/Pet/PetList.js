@@ -33,14 +33,14 @@ function PetList({ listData, updateList }) {
   const renderPageNumbers = pages.map(number => {
 
       if(number < maxPageNumberLimit+1 && number >minPageNumberLimit) {
-        return (
-          <li key={number} id={number} onClick={handleClick}
-          className={currentPage === number ? "active":null}>
-              {number}
-          </li>
-        );
+          return (
+            <li key={number} id={number} onClick={handleClick}
+            className={currentPage === number ? "active":null}>
+                {number}
+            </li>
+          );
       }else {
-        return null;
+          return null;
       }
   });
 
@@ -50,7 +50,7 @@ function PetList({ listData, updateList }) {
       .then((data) => {
         updateList(data);
       });
-  }, []);
+  }, [updateList]);
 
   function deletePet (id) {
     console.log("deleting...")
@@ -101,7 +101,6 @@ function PetList({ listData, updateList }) {
       pageDecrementBtn = <li onClick={handlePrevBtn}> &hellip; </li>
     }
 
-    
   return (
     <>
       <h1>Pet List</h1>

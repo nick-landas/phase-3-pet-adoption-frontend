@@ -39,7 +39,7 @@ function PetForm({formData, updateFunction, listData, updateList}) {
   return (
     <>
       <h1>Add a pet available for adoption</h1>
-      <Container className="p-5">
+      <Container>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-2" controlId="formSpecies">
           <Form.Label>Species</Form.Label>
@@ -97,7 +97,8 @@ function PetForm({formData, updateFunction, listData, updateList}) {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <br />
+        <Button className="adoptbtn" variant="primary" type="submit">
           Submit
         </Button>
       </Form>
