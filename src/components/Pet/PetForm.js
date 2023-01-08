@@ -41,7 +41,7 @@ function PetForm({formData, updateFunction, listData, updateList}) {
       <h1>Add a pet available for adoption</h1>
       <Container className="p-5">
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formSpecies">
+        <Form.Group className="mb-2" controlId="formSpecies">
           <Form.Label>Species</Form.Label>
           <Form.Control
             name="species"
@@ -50,7 +50,7 @@ function PetForm({formData, updateFunction, listData, updateList}) {
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formColor">
+        <Form.Group className="mb-2" controlId="formColor">
           <Form.Label>Color</Form.Label>
           <Form.Control
             name="color"
@@ -59,7 +59,7 @@ function PetForm({formData, updateFunction, listData, updateList}) {
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formWeight">
+        <Form.Group className="mb-2" controlId="formWeight">
           <Form.Label>Weight</Form.Label>
           <Form.Control
             name="weight"
@@ -68,7 +68,7 @@ function PetForm({formData, updateFunction, listData, updateList}) {
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formIsHousebroken">
+        <Form.Group className="mb-2" controlId="formIsHousebroken">
           <Form.Label>House Training</Form.Label>
           <Form.Check
             name="house_broken"
@@ -92,12 +92,10 @@ function PetForm({formData, updateFunction, listData, updateList}) {
             name="personality"
             as="textarea"
             rows={3}
+            placeholder= "Please input a description of the pet's personality, habits, and how
+            they get along with people, kids, and other pets."
             onChange={handleChange}
           />
-          <Form.Text className="text-muted">
-            Please input a description of the pet's personality, habits, and how
-            they get along with people, kids, and other pets.
-          </Form.Text>
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
